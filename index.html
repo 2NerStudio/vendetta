@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vendetta | Competitive RLSS Team</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+  <div id="header">
+    <img src="logo.png" alt="Logo Vendetta" id="logo">
+    <nav>
+      <button id="menu-button">☰</button>
+      <button id="search-button">🔍</button>
+    </nav>
+  </div>
+
+  <main id="main">
+    <h1 id="title">VENDETTA</h1>
+    <div id="subtitle">Competitive RLSS Team</div>
+
+    <section class="section">
+      <h2>Biografia</h2>
+      <div class="btn-group">
+        <button onclick="mostrarTexto('bio', 'pt')">🇧🇷</button>
+        <button onclick="mostrarTexto('bio', 'en')">🇺🇸</button>
+      </div>
+      <p id="bio" class="content-text"></p>
+    </section>
+
+    <section class="section">
+      <h2>Objetivo</h2>
+      <div class="btn-group">
+        <button onclick="mostrarTexto('objetivo', 'pt')">🇧🇷</button>
+        <button onclick="mostrarTexto('objetivo', 'en')">🇺🇸</button>
+      </div>
+      <p id="objetivo" class="content-text"></p>
+    </section>
+
+    <section class="section">
+      <h2>Como ingressar ao time?</h2>
+      <p class="content-text">(como entrar)</p>
+    </section>
+
+    <section class="section">
+      <h2>Unidades</h2>
+      <p class="content-text">SAM | LATAM | EU | NAM | MENU</p>
+    </section>
+
+    <section class="section">
+      <button onclick="vinganca()">🔥 Queremos Vingança!</button>
+    </section>
+  </main>
+
+  <footer id="footer">
+    <p>© 2025 Vendetta RLSS. Todos os direitos reservados.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, #0d0d0d, #1a1a1a);
+  color: #ffffff;
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+  overflow-x: hidden;
+  padding-bottom: 100px;
+}
+
+#header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #1a1a1a;
+  border-bottom: 2px solid #333;
+  box-shadow: 0 0 10px #000;
+}
+
+#logo {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-shadow: 0 0 12px #fff;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 12px #fff;
+  }
+  50% {
+    transform: scale(1.05);
+    box-shadow: 0 0 24px #fff;
+  }
+}
+
+nav button {
+  font-size: 28px;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+nav button:hover {
+  transform: scale(1.2);
+}
+
+#main {
+  padding: 40px 20px;
+  animation: fadeIn 1.5s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+#title {
+  font-size: 60px;
+  font-weight: bold;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  background: linear-gradient(to right, #ffffff, #999999);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+  margin-bottom: 10px;
+  transition: text-shadow 0.3s;
+}
+
+#title:hover {
+  text-shadow: 0 0 30px #fff;
+}
+
+#subtitle {
+  background-color: #222;
+  color: #bbb;
+  display: inline-block;
+  padding: 10px 25px;
+  border-radius: 20px;
+  font-size: 20px;
+  margin-bottom: 40px;
+  opacity: 0.9;
+}
+
+.section {
+  margin: 40px auto;
+  max-width: 600px;
+  animation: fadeUp 1.2s ease forwards;
+  opacity: 0;
+}
+
+.section:nth-child(n+2) {
+  animation-delay: 0.3s;
+}
+
+@keyframes fadeUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.section h2 {
+  background-color: #fff;
+  color: #000;
+  display: inline-block;
+  padding: 14px 30px;
+  border-radius: 20px;
+  font-size: 22px;
+  box-shadow: 0 0 12px #fff;
+  margin-bottom: 20px;
+  transition: transform 0.3s;
+}
+
+.section h2:hover {
+  transform: scale(1.05);
+}
+
+.btn-group {
+  margin: 10px 0;
+}
+
+button {
+  margin: 10px 5px;
+  padding: 12px 20px;
+  border-radius: 16px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #222;
+  color: #ffffff;
+  box-shadow: 0 0 10px #000;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #444;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px #ff0044, 0 0 20px #ff0044;
+}
+
+.content-text {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #ddd;
+  transition: all 0.4s ease-in-out;
+}
+
+.final-msg {
+  background-color: #ffffff;
+  color: #000000;
+  display: inline-block;
+  padding: 12px 25px;
+  border-radius: 16px;
+  font-size: 20px;
+  font-weight: bold;
+  box-shadow: 0 0 15px #fff;
+  margin-bottom: 30px;
+  animation: glow 0.5s alternate infinite;
+}
+
+@keyframes glow {
+  0% { box-shadow: 0 0 10px #fff; }
+  100% { box-shadow: 0 0 20px #ff0000; }
+}
+
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #1a1a1a;
+  color: #888;
+  padding: 15px;
+  font-size: 14px;
+  border-top: 2px solid #333;
+  text-align: center;
+}
+
+/* 📱 Responsivo para mobile */
+@media (max-width: 600px) {
+  #title {
+    font-size: 40px;
+  }
+
+  #subtitle {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 10px 16px;
+  }
+
+  #header {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  #logo {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+</style>
+
+<script>
+function mostrarTexto(campo, idioma) {
+  const textos = {
+    bio: {
+      pt: "Desc em ptbr",
+      en: "Desc in en"
+    },
+    objetivo: {
+      pt: "Obj em ptbr",
+      en: "Obj in en"
+    }
+  };
+
+  document.getElementById(campo).textContent = textos[campo][idioma];
+}
+
+function vinganca() {
+  const msg = document.createElement('div');
+  msg.className = 'final-msg';
+  msg.textContent = 'Espere e assista...';
+  document.getElementById('main').prepend(msg);
+
+  setTimeout(() => {
+    msg.remove();
+  }, 4000);
+}
+
+</script>
